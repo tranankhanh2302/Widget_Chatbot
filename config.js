@@ -10,7 +10,7 @@ const CHARACTERS = [
   { id: 'remielle', name: 'Remielle' },
   { id: 'arlecchino', name: 'Arlecchino' },
   { id: 'columbina', name: 'Columbina' },
-  { id: 'yanagi NSFW', name: 'yanagi NSFW' }
+  { id: 'yanagi_NSFW', name: 'Yanagi (NSFW)' }
 ];
 
 const DEFAULT_CHARACTER = 'remielle';
