@@ -1,10 +1,29 @@
-const ASSETS = {
-  WAITING: chrome.runtime.getURL('assets/waiting_user_input.gif'),
-  USER_TYPING: chrome.runtime.getURL('assets/user_typing.gif'),
-  AI_THINKING: chrome.runtime.getURL('assets/ai_thingking.gif'), // Note the typo in the file name
-  AI_TYPING: chrome.runtime.getURL('assets/ai_typing.gif'),
-  AI_COMPLETE: chrome.runtime.getURL('assets/ai_complete_answer.gif')
-};
+// ============================================================
+// CHARACTER / ASSET LOADING
+// CHARACTERS and DEFAULT_CHARACTER come from config.js, which is
+// loaded before this file in manifest.json's content_scripts.
+// ============================================================
+
+let currentCharacter = DEFAULT_CHARACTER;
+let ASSETS = {};
+
+function buildAssets(character) {
+  return {
+    WAITING: chrome.runtime.getURL(`assets/${character}/waiting_user_input.gif`),
+    USER_TYPING: chrome.runtime.getURL(`assets/${character}/user_typing.gif`),
+    AI_THINKING: chrome.runtime.getURL(`assets/${character}/ai_thingking.gif`), // Note the typo in the file name
+    AI_TYPING: chrome.runtime.getURL(`assets/${character}/ai_typing.gif`),
+    AI_COMPLETE: chrome.runtime.getURL(`assets/${character}/ai_complete_answer.gif`)
+  };
+}
+
+function applyCharacter(character) {
+  currentCharacter = character;
+  ASSETS = buildAssets(character);
+  if (widgetImg) {
+    widgetImg.src = ASSETS[currentState] || ASSETS.WAITING;
+  }
+}
 
 const STATES = {
   WAITING: 'WAITING',
@@ -39,7 +58,7 @@ function makeDraggable(container) {
   let initialTop = 0;
 
   container.addEventListener('mousedown', (e) => {
-    if (e.button !== 0) return; // Chỉ kéo khi bấm chuột trái
+    if (e.button !== 0) return;
 
     isDragging = true;
     container.classList.add('dragging');
@@ -68,7 +87,6 @@ function makeDraggable(container) {
     let newLeft = initialLeft + dx;
     let newTop = initialTop + dy;
 
-    // Giới hạn trong khoảng màn hình
     const containerWidth = container.offsetWidth || 150;
     const containerHeight = container.offsetHeight || 150;
     const maxLeft = window.innerWidth - containerWidth;
@@ -97,7 +115,6 @@ function setState(newState) {
   widgetImg.src = ASSETS[newState];
 }
 
-// Logic to detect User Typing and Send
 function setupUserTypingDetection() {
   const handleInputChange = (target) => {
     if (!target) return;
@@ -108,7 +125,6 @@ function setupUserTypingDetection() {
           setState(STATES.USER_TYPING);
         }
       } else {
-        // Xóa trắng input -> Trở về WAITING
         if (currentState !== STATES.AI_THINKING && currentState !== STATES.AI_TYPING) {
           setState(STATES.WAITING);
         }
@@ -116,7 +132,6 @@ function setupUserTypingDetection() {
     }
   };
 
-  // Listen to input & keyup (backspace/delete) events
   document.body.addEventListener('input', (e) => handleInputChange(e.target));
   document.body.addEventListener('keyup', (e) => {
     if (e.key === 'Backspace' || e.key === 'Delete') {
@@ -124,7 +139,6 @@ function setupUserTypingDetection() {
     }
   });
 
-  // Catch keydown for Enter (send)
   document.body.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       if (e.target.isContentEditable || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') {
@@ -137,7 +151,6 @@ function setupUserTypingDetection() {
     }
   }, true);
 
-  // Catch click on send buttons
   document.body.addEventListener('click', (e) => {
      let target = e.target;
      while (target != null && target !== document.body) {
@@ -175,12 +188,10 @@ function setupUserTypingDetection() {
   });
 }
 
-
 let typingTimeout;
 let aiObserver;
 let checkingAITyping = false;
 
-// Hàm kiểm tra cấu trúc DOM: chỉ trả về true khi thực sự có chữ được sinh ra trong khối trả lời (message-content/.markdown)
 function isActualAnswerTextMutation(mutation) {
   let targetEl = null;
 
@@ -198,15 +209,12 @@ function isActualAnswerTextMutation(mutation) {
 
   if (!targetEl) return false;
 
-  // 1. Phải NẰM TRONG container chứa nội dung câu trả lời thật sự (message-content hoặc .markdown)
   const isInsideAnswerContainer = targetEl.closest('message-content, .message-content, .markdown, model-response .markdown');
   if (!isInsideAnswerContainer) return false;
 
-  // 2. Phải KHÔNG NẰM TRONG khối suy nghĩ (Thought Viewer) hay khối tìm kiếm web (Grounding)
   const isInsideThinkingOrSearch = targetEl.closest('gdm-thought-viewer, thought-viewer, .thought-container, gdm-grounding-drawer, grounding-chips, .grounding-container, search-entry-point');
   if (isInsideThinkingOrSearch) return false;
 
-  // 3. Phải chứa chữ thực sự
   const text = (targetEl.textContent || '').trim();
   return text.length > 0;
 }
@@ -261,10 +269,22 @@ function stopAITypingDetection() {
     checkingAITyping = false;
 }
 
-// Initialize
-createWidget();
-setupUserTypingDetection();
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  chrome.storage.sync.get(['selectedCharacter'], (result) => {
+    const character = result.selectedCharacter || DEFAULT_CHARACTER;
+    applyCharacter(character);
+    createWidget();
+    setupUserTypingDetection();
+  });
+}
 
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && changes.selectedCharacter) {
+    applyCharacter(changes.selectedCharacter.newValue || DEFAULT_CHARACTER);
+  }
+});
 
-// Let's add an extra safety check. Sometimes we might miss the end of generation.
-// Polling for UI states might be needed, but mutation observer with timeout is decent.
+init();
