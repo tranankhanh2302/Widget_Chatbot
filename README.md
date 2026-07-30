@@ -1,70 +1,70 @@
 # 🌸 Gemielle - Gemini AI Assistant Widget
 
-**Gemielle** là một Chrome Extension giúp hiển thị một "trợ lý AI" sinh động ở góc màn hình khi bạn sử dụng Google Gemini Web (`gemini.google.com`). Trợ lý sẽ tự động biểu cảm và chuyển đổi trạng thái theo thời gian thực tương ứng với hành vi của bạn và AI.
+**Gemielle** is a Chrome Extension that displays a lively "AI assistant" in the corner of your screen while you use Google Gemini Web (`gemini.google.com`). The assistant automatically changes its expression and state in real time, matching your behavior and the AI's.
 
 ---
 
-## ✨ Tính năng nổi bật
+## ✨ Key Features
 
-- 🎭 **5 Trạng thái biểu cảm linh hoạt:** Theo dõi chính xác từng bước tương tác giữa User và Gemini.
-- 🖱️ **Kéo thả tự do (Drag & Drop):** Bạn có thể dễ dàng "túm" và di chuyển Gemielle đến bất kỳ góc nào trên màn hình.
-- ⚡ **Nhận diện chính xác & Mượt mà:**
-  - Nhận diện khi user gõ prompt hoặc xoá trắng input.
-  - Phân biệt chính xác giữa lúc AI suy nghĩ/tìm kiếm web (Grounding) với lúc AI thực sự sinh chữ.
-  - Phản hồi trạng thái ngay lập tức khi AI kết thúc câu trả lời.
+- 🎭 **5 flexible expression states:** Accurately tracks each step of the interaction between the user and Gemini.
+- 🖱️ **Free drag & drop:** Easily "grab" and move Gemielle to any corner of the screen.
+- ⚡ **Accurate & smooth detection:**
+  - Detects when the user types a prompt or clears the input field.
+  - Accurately distinguishes between the AI thinking/searching the web (Grounding) and the AI actually generating text.
+  - Responds instantly when the AI finishes its answer.
 
 ---
 
-## 🎭 Các trạng thái trợ lý (Assistant States)
+## 🎭 Assistant States
 
-| Trạng thái | Biểu tượng GIF | Mô tả |
+| State | GIF Icon | Description |
 | :--- | :---: | :--- |
-| **WAITING** | ![Waiting](assets/waiting_user_input.gif) | Trợ lý đang ở trạng thái chờ người dùng nhập prompt. |
-| **USER_TYPING** | ![User Typing](assets/user_typing.gif) | Bạn đang gõ văn bản vào ô nhập liệu của Gemini. |
-| **AI_THINKING** | ![AI Thinking](assets/ai_thingking.gif) | AI đang suy nghĩ, xử lý yêu cầu hoặc tìm kiếm thông tin trên Web. |
-| **AI_TYPING** | ![AI Typing](assets/ai_typing.gif) | AI đang bắt đầu sinh và xuất văn bản trả lời. |
-| **AI_COMPLETE** | ![AI Complete](assets/ai_complete_answer.gif) | AI đã hoàn thành xong câu trả lời. |
+| **WAITING** | ![Waiting](assets/waiting_user_input.gif) | The assistant is waiting for the user to enter a prompt. |
+| **USER_TYPING** | ![User Typing](assets/user_typing.gif) | You are typing text into Gemini's input field. |
+| **AI_THINKING** | ![AI Thinking](assets/ai_thingking.gif) | The AI is thinking, processing the request, or searching the web. |
+| **AI_TYPING** | ![AI Typing](assets/ai_typing.gif) | The AI has started generating and outputting the answer text. |
+| **AI_COMPLETE** | ![AI Complete](assets/ai_complete_answer.gif) | The AI has finished the answer. |
 
 ---
 
-## 🚀 Hướng dẫn cài đặt chi tiết (Dành cho người không biết code)
+## 🚀 Detailed Installation Guide (For non-coders)
 
-### 📌 Bước 1: Tải extension
-1. Bấm nút **Code** (màu xanh ở trên cùng trang GitHub này) ➔ Chọn **Download ZIP**.
-2. Giải nén tệp `.zip` vừa tải về, bạn sẽ nhận được thư mục chứa extension (ví dụ: `Gemielle`).
+### 📌 Step 1: Download the extension
+1. Click the green **Code** button (at the top of this GitHub page) ➔ select **Download ZIP**.
+2. Unzip the `.zip` file you downloaded — you'll get a folder containing the extension (e.g., `Gemielle`).
 
-### 📌 Bước 2: Lưu trữ thư mục cài đặt
-*(Lưu ý: Lưu thư mục vào đúng vị trí dữ liệu tiện ích của Chrome để tránh vô tình xóa tệp khiến Extension ngưng hoạt động)*
+### 📌 Step 2: Store the install folder
+*(Note: Store the folder in Chrome's actual extension data location, so it doesn't accidentally get deleted and stop the extension from working)*
 
-- **Dành cho Windows:**
-  1. Nhấn tổ hợp phím **Windows + R** trên bàn phím để mở hộp thoại **Run**.
-  2. Nhập hoặc dán đường dẫn sau rồi nhấn **Enter**:
-     ```text
+- **For Windows:**
+  1. Press **Windows + R** on your keyboard to open the **Run** dialog.
+  2. Type or paste the following path, then press **Enter**:
+```text
      %LOCALAPPDATA%\Google\Chrome\User Data\Default\Extensions
-     ```
-  3. Cửa sổ thư mục sẽ mở ra. Hãy **chép (copy) thư mục `Gemielle`** vào đây.
+```
+  3. A folder window will open. **Copy the `Gemielle` folder** into it.
 
-- **Dành cho macOS:**
-  1. Mở **Finder**, nhấn tổ hợp phím **Command + Shift + G** (hoặc chọn menu *Go* ➔ *Go to Folder...*).
-  2. Nhập đường dẫn sau rồi nhấn **Return (Enter)**:
-     ```text
+- **For macOS:**
+  1. Open **Finder**, press **Command + Shift + G** (or select the *Go* menu ➔ *Go to Folder...*).
+  2. Type the following path, then press **Return (Enter)**:
+```text
      ~/Library/Application Support/Google/Chrome/Default/Extensions
-     ```
-  3. Cửa sổ thư mục sẽ mở ra. Hãy **chép (copy) thư mục `Gemielle`** vào đây.
+```
+  3. A folder window will open. **Copy the `Gemielle` folder** into it.
 
-### 📌 Bước 3: Thêm vào trình duyệt Chrome
-1. Mở Google Chrome, nhập địa chỉ sau vào thanh tìm kiếm rồi nhấn **Enter**:
-   ```text
+### 📌 Step 3: Add it to Chrome
+1. Open Google Chrome, type the following address into the address bar, then press **Enter**:
+```text
    chrome://extensions/
-   ```
-2. Bật công tắc **Chế độ dành cho nhà phát triển (Developer mode)** ở góc trên bên phải màn hình.
-3. Nhấn vào nút **Tải tiện ích đã giải nén (Load unpacked)** ở góc trên bên trái.
-4. Chọn đến thư mục `Gemielle` bạn vừa lưu ở Bước 2 và bấm **Select / Open**.
-5. Mở [Google Gemini](https://gemini.google.com/) để bắt đầu trải nghiệm trợ lý Gemielle ở góc màn hình! 🎉
+```
+2. Turn on **Developer mode** in the top-right corner of the screen.
+3. Click **Load unpacked** in the top-left corner.
+4. Navigate to the `Gemielle` folder you saved in Step 2 and click **Select / Open**.
+5. Open [Google Gemini](https://gemini.google.com/) to start experiencing the Gemielle assistant in the corner of your screen! 🎉
 
 ---
 
-## ⚠️ Miễn trừ trách nhiệm (Disclaimer)
+## ⚠️ Disclaimer
 
-- **Gemielle** là một dự án mã nguồn mở cá nhân được phát triển độc lập và **không liên kết, hợp tác, đại diện hay được tài trợ bởi Google LLC / Google Gemini**.
-- Extension hoạt động hoàn toàn ở phía client (Client-side), chỉ tương tác với DOM giao diện trình duyệt và **không thu thập, lưu trữ hay gửi bất kỳ dữ liệu cá nhân nào** của người dùng.
+- **Gemielle** is an independently developed, personal open-source project and is **not affiliated with, endorsed by, or sponsored by Google LLC / Google Gemini**.
+- The extension runs entirely on the client side; it only interacts with the browser's DOM interface and **does not collect, store, or transmit any of the user's personal data**.
