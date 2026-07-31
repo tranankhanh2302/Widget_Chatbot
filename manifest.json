@@ -22,6 +22,11 @@
       "matches": ["*://claude.ai/*"],
       "css": ["style.css"],
       "js": ["config.js", "shared.js", "adapter-claude.js"]
+    },
+    {
+      "matches": ["*://grok.com/*"],
+      "css": ["style.css"],
+      "js": ["config.js", "shared.js", "adapter-grok.js"]
     }
   ],
   "web_accessible_resources": [
@@ -32,6 +37,7 @@
         "*://chatgpt.com/*",
         "*://chat.openai.com/*",
         "*://claude.ai/*"
+        "*://grok.com/*"
       ]
     }
   ]
