@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Gemielle",
-  "version": "2.0",
-  "description": "Shows an AI assistant widget on the bottom right corner of Gemini web to indicate AI and User status. Now with switchable characters.",
+  "version": "3.0",
+  "description": "Shows a switchable AI-character widget on Gemini, ChatGPT, and Claude, reacting live to AI/user status.",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup.html"
@@ -11,13 +11,28 @@
     {
       "matches": ["*://gemini.google.com/*"],
       "css": ["style.css"],
-      "js": ["config.js", "content.js"]
+      "js": ["config.js", "shared.js", "adapter-gemini.js"]
+    },
+    {
+      "matches": ["*://chatgpt.com/*", "*://chat.openai.com/*"],
+      "css": ["style.css"],
+      "js": ["config.js", "shared.js", "adapter-chatgpt.js"]
+    },
+    {
+      "matches": ["*://claude.ai/*"],
+      "css": ["style.css"],
+      "js": ["config.js", "shared.js", "adapter-claude.js"]
     }
   ],
   "web_accessible_resources": [
     {
       "resources": ["assets/*/*.gif"],
-      "matches": ["*://gemini.google.com/*"]
+      "matches": [
+        "*://gemini.google.com/*",
+        "*://chatgpt.com/*",
+        "*://chat.openai.com/*",
+        "*://claude.ai/*"
+      ]
     }
   ]
 }
