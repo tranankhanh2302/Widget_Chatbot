@@ -1,6 +1,7 @@
 // =============================================================
 // NotebookLM (Gemini Notebook) adapter — notebooklm.google.com
-
+// Site-specific detection only. Widget UI, character loading,
+// dragging, resize, and click effects all live in shared.js.
 // =============================================================
 
 let aiObserver = null;
