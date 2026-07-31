@@ -44,7 +44,7 @@ This project builds on the work of two people:
 | :--- | :---: | :--- |
 | **WAITING** | ![Waiting](assets/remielle/waiting_user_input.gif) | The assistant is waiting for the user to enter a prompt. |
 | **USER_TYPING** | ![User Typing](assets/remielle/user_typing.gif) | You are typing text into the chat's input field. |
-| **AI_THINKING** | ![AI Thinking](assets/remielle/ai_thingking.gif) | The AI is thinking, reasoning, processing the request, or searching the web. |
+| **AI_THINKING** | ![AI Thinking](assets/remielle/ai_thinking.gif) | The AI is thinking, reasoning, processing the request, or searching the web. |
 | **AI_TYPING** | ![AI Typing](assets/remielle/ai_typing.gif) | The AI has started generating and outputting the answer text. |
 | **AI_COMPLETE** | ![AI Complete](assets/remielle/ai_complete_answer.gif) | The AI has finished the answer. |
 
