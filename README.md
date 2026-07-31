@@ -1,6 +1,6 @@
 # 🌸 Gemielle - AI Assistant Widget
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1000&color=C084FC&center=true&vCenter=true&width=700&lines=Your+AI+Companion%2C+Everywhere;Breathe+Life+Into+Your+AI+Companion;Gemini+%E2%80%A2+ChatGPT+%E2%80%A2+Claude)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1000&color=C084FC&center=true&vCenter=true&width=700&lines=Breathe+Life+Into+Your+AI+Companion;Gemini+%E2%80%A2+ChatGPT+%E2%80%A2+Claude)](https://git.io/typing-svg)
 
 **Gemielle** is a Chrome Extension that displays a lively, switchable "AI assistant" character in the corner of your screen while you use **Google Gemini**, **ChatGPT**, and **Claude**. The assistant automatically changes its expression and state in real time, matching your behavior and the AI's — and you can pick which character shows up from a built-in toggle.
 
