@@ -1,8 +1,8 @@
 # 🌸 Gemielle - AI Assistant Widget
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1000&color=C084FC&center=true&vCenter=true&width=700&lines=Breathe+Life+Into+Your+AI+Companion;Gemini+%E2%80%A2+ChatGPT+%E2%80%A2+Claude)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?font=Fira+Code&size=28&pause=1000&color=C084FC&center=true&vCenter=true&width=700&lines=Breathe+Life+Into+Your+AI+Companion;Gemini+%E2%80%A2+ChatGPT+%E2%80%A2+Claude+%E2%80%A2+Grok)](https://git.io/typing-svg)
 
-**Gemielle** is a Chrome Extension that displays a lively, switchable "AI assistant" character in the corner of your screen while you use **Google Gemini**, **ChatGPT**, and **Claude**. The assistant automatically changes its expression and state in real time, matching your behavior and the AI's — and you can pick which character shows up from a built-in toggle.
+**Gemielle** is a Chrome Extension that displays a lively, switchable "AI assistant" character in the corner of your screen while you use **Google Gemini**, **ChatGPT**, **Claude**, and **Grok**. The assistant automatically changes its expression and state in real time, matching your behavior and the AI's — and you can pick which character shows up from a built-in toggle.
 
 ---
 
@@ -17,7 +17,7 @@ This project builds on the work of two people:
 
 - 🎭 **Multi-character support** — swap the widget's entire GIF set via a dropdown popup, no code editing required.
 - 🖼️ **Custom characters** — original assets replaced/extended with additional character sets living side-by-side.
-- 🔀 **Unified multi-site extension** — Gemini, ChatGPT, and Claude support merged into **one** extension with **one** shared character toggle, instead of three separate installs.
+- 🔀 **Unified multi-site extension** — Gemini, ChatGPT, Claude, and Grok support merged into **one** extension with **one** shared character toggle, instead of separate installs per site.
 - 📏 **Consistent sizing across all GIFs** — every character/state image fills the widget uniformly regardless of its original resolution or aspect ratio.
 
 ---
@@ -74,6 +74,7 @@ Open any of the following to see your assistant appear in the bottom-right corne
 - [Google Gemini](https://gemini.google.com/)
 - [ChatGPT](https://chatgpt.com/)
 - [Claude](https://claude.ai/)
+- [Grok](https://grok.com/)
 
 🎉
 
@@ -81,5 +82,5 @@ Open any of the following to see your assistant appear in the bottom-right corne
 
 ## ⚠️ Disclaimer
 
-- This project is an independently developed, personal open-source extension and is **not affiliated with, endorsed by, or sponsored by Google LLC (Gemini), OpenAI (ChatGPT), or Anthropic (Claude)**.
+- This project is an independently developed, personal open-source extension and is **not affiliated with, endorsed by, or sponsored by Google LLC (Gemini), OpenAI (ChatGPT), Anthropic (Claude), or xAI (Grok)**.
 - The extension runs entirely on the client side; it only interacts with each site's DOM interface and **does not collect, store, or transmit any of the user's personal data or conversation content**.
