@@ -36,7 +36,7 @@
         "*://gemini.google.com/*",
         "*://chatgpt.com/*",
         "*://chat.openai.com/*",
-        "*://claude.ai/*"
+        "*://claude.ai/*",
         "*://grok.com/*"
       ]
     }
