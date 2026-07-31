@@ -2,8 +2,14 @@
   "manifest_version": 3,
   "name": "Gemielle",
   "version": "3.0",
-  "description": "Shows a switchable AI-character widget on Gemini, ChatGPT, and Claude, reacting live to AI/user status.",
+  "description": "Shows a switchable AI-character widget on Gemini, ChatGPT, Claude, and Grok, reacting live to AI/user status.",
   "permissions": ["storage"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gemielle@tranankhanh",
+      "strict_min_version": "109.0"
+    }
+  },
   "action": {
     "default_popup": "popup.html"
   },
