@@ -33,11 +33,6 @@
       "matches": ["*://grok.com/*"],
       "css": ["style.css"],
       "js": ["config.js", "shared.js", "adapter-grok.js"]
-    },
-    {
-      "matches": ["*://notebooklm.google.com/*"],
-      "css": ["style.css"],
-      "js": ["config.js", "shared.js", "adapter-notebooklm.js"]
     }
   ],
   "web_accessible_resources": [
@@ -48,8 +43,7 @@
         "*://chatgpt.com/*",
         "*://chat.openai.com/*",
         "*://claude.ai/*",
-        "*://grok.com/*",
-        "*://notebooklm.google.com/*"
+        "*://grok.com/*"
       ]
     }
   ]
