@@ -40,7 +40,7 @@ function buildAssets(character) {
   return {
     WAITING: chrome.runtime.getURL(`assets/${character}/waiting_user_input.gif`),
     USER_TYPING: chrome.runtime.getURL(`assets/${character}/user_typing.gif`),
-    AI_THINKING: chrome.runtime.getURL(`assets/${character}/ai_thingking.gif`), // Note the typo in the file name
+    AI_THINKING: chrome.runtime.getURL(`assets/${character}/ai_thinking.gif`), 
     AI_TYPING: chrome.runtime.getURL(`assets/${character}/ai_typing.gif`),
     AI_COMPLETE: chrome.runtime.getURL(`assets/${character}/ai_complete_answer.gif`)
   };
