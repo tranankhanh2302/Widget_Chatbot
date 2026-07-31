@@ -59,3 +59,4 @@ const CHARACTERS = [
 ---
 
 That's it — reload the extension in `chrome://extensions` (refresh icon on the extension card), and your new character will appear in the toolbar dropdown.
+Or you can just replace a Gif within the folders that are already available, as long as you keep the 5 naming conventions, they will function.
