@@ -54,7 +54,7 @@ This project builds on the work of two people:
 
 ### 📌 Step 1: Download the extension
 1. Click the green **Code** button (at the top of this GitHub page) ➔ select **Download ZIP**.
-2. Unzip the `.zip` file you downloaded — you'll get a folder containing the extension.
+2. Unzip the `.zip` file you downloaded — you'll get a folder containing the extension. Or just copy the 'Widget_Chatbot-main' file inside to another location you use.
 
 ### 📌 Step 2: Add it to Chrome
 1. Open Google Chrome, type the following address into the address bar, then press **Enter**:
