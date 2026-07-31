@@ -3,6 +3,13 @@
 **Gemielle** is a Chrome Extension that displays a lively "AI assistant" in the corner of your screen while you use Google Gemini Web (`gemini.google.com`). The assistant automatically changes its expression and state in real time, matching your behavior and the AI's.
 
 ---
+## 🙏 Credits
+
+This project builds on the work of two people:
+
+- **[Rainan1010](https://github.com/Rainan1010)** — creator of the original [Gemielle](https://github.com/Rainan1010/Gemielle) extension for Gemini, which this project is forked from.
+- **[Tqan-Nguyen](https://github.com/Tqan-Nguyen)** — creator of [Remielle-Widget](https://github.com/Tqan-Nguyen/Remielle-Widget), whose ChatGPT and Claude detection logic was adapted into this project's multi-site support.
+---
 
 ## ✨ Key Features
 
