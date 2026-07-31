@@ -1,5 +1,8 @@
 // =============================================================
 // Grok adapter — grok.com
+// Site-specific detection only. Widget UI, character loading,
+// dragging, resize, and click effects all live in shared.js.
+// Detection logic adapted from Tqan-Nguyen/Remielle-Widget.
 // =============================================================
 
 let aiObserver = null;
